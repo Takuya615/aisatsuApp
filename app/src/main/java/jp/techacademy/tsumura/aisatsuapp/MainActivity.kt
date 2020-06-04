@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity(),View.OnClickListener{
                 ->
                 Log.d("UI_PARTS", "$hour:$minute")
 
-                when(val x=hour){
+                when(hour){
                     2,3,4,5,6,7,8,9->textview.text="おはよう"
                     10,11,12,13,14,15,16,17->textview.text="こんにちわ"
                     18,19,20,21,22,23,24,1->textview.text="こんばんわ"
