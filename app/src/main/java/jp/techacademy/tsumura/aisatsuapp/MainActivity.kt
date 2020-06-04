@@ -25,29 +25,15 @@ class MainActivity : AppCompatActivity(),View.OnClickListener{
             TimePickerDialog.OnTimeSetListener() { view, hour, minute
                 ->
                 Log.d("UI_PARTS", "$hour:$minute")
+
+                when(val x=hour){
+                    2,3,4,5,6,7,8,9->textview.text="おはよう"
+                    10,11,12,13,14,15,16,17->textview.text="こんにちわ"
+                    18,19,20,21,22,23,24,1->textview.text="こんばんわ"
+                    else->textview.text="エラー"
+                }
             },
             13,0,true)
         timePickerDialog.show()
-
-        //時刻によってあいさつを変えるメソッド案①
-        val AAA= timePickerDialig.show() {
-            if (2:00..9:59){
-            textview.text = "おはよう"
-        }else if(10:00..17:59){
-            textview.text = "こんにちわ"
-        }else if(18:00..1:59){
-            textview.text = "こんばんわ"
-        }else { textview.text = "error" }
-        }
-
-        //時刻によってあいさつを変えるメソッド案②
-        val BBB=when(timePickerDialog.show()){
-            2:00..9:59->"おはよう"
-            10:00..17:59->"こんにちは"
-            18:00..1:59->"こんばんは"
-            else->"エラー"
-        }
-        textview.text="BBB"
     }
-
 }
